@@ -11,41 +11,57 @@ function getComputerChoice() {
     }
 }
 
+let playerWinCount = 0;
+let computerWinCount = 0;
+
 function playRound(playerSelection, computerSelection) {
+    if (playerWinCount == 5) {
+        return "Player is victorious!";
+    }
+
+    if (computerWinCount == 5) {
+        return "Computer is victorious!";
+    }
     if (playerSelection == computerSelection) {
         return "Tie!"
     }
 
     if (playerSelection == "rock") {
         if (computerSelection == "paper") {
-            return "Computer wins! Paper beats rock"
+            computerWinCount++;
+            return "Computer wins! Paper beats rock";
         }
         if (computerSelection == "scissors") {
-            return "Player wins! Rock beats scissors"
+            playerWinCount++;
+            return "Player wins! Rock beats scissors";
         }
     }
 
     if (playerSelection == "paper") {
         if (computerSelection == "rock") {
-            return "Player wins! Paper beats rock"
+            playerWinCount++;
+            return "Player wins! Paper beats rock";
         }
         if (computerSelection == "scissors") {
-            return "Computer wins! Scissors beats paper"
+            computerWinCount++;
+            return "Computer wins! Scissors beats paper";
         }
     }
 
     if (playerSelection == "scissors") {
         if (computerSelection == "rock") {
-            return "Computer wins! Rock beats scissors"
+            computerWinCount++;
+            return "Computer wins! Rock beats scissors";
         }
         if (computerSelection == "paper") {
-            return "Player wins! Scissors beats paper"
+            playerWinCount++;
+            return "Player wins! Scissors beats paper";
         }
     }
 
 }
 
-function game() {
+/*function game() {
     let playerWinCount = 0;
     let computerWinCount = 0;
 
@@ -70,22 +86,28 @@ function game() {
             continue;
         }
     }
-}
+} */
 
 document.getElementById("rock").addEventListener("click", function() {
     let computer = getComputerChoice();
     let result = playRound("rock", computer);
     document.getElementById("result").innerHTML = result;
+    document.getElementById("player-score").innerHTML = "Player score: " + playerWinCount;
+    document.getElementById("computer-score").innerHTML = "Computer score: " + computerWinCount;
 });
 
 document.getElementById("paper").addEventListener("click", function() {
     let computer = getComputerChoice();
     let result = playRound("paper", computer);
     document.getElementById("result").innerHTML = result;
+    document.getElementById("player-score").innerHTML = "Player score: " + playerWinCount;
+    document.getElementById("computer-score").innerHTML = "Computer score: " + computerWinCount;
 });
 
 document.getElementById("scissors").addEventListener("click", function() {
     let computer = getComputerChoice();
     let result = playRound("scissors", computer);
     document.getElementById("result").innerHTML = result;
+    document.getElementById("player-score").innerHTML = "Player score: " + playerWinCount;
+    document.getElementById("computer-score").innerHTML = "Computer score: " + computerWinCount;
 });
