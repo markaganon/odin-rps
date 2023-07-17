@@ -72,4 +72,20 @@ function game() {
     }
 }
 
-console.log(game())
+document.getElementById("rock").addEventListener("click", function() {
+    let computer = getComputerChoice();
+    let result = playRound("rock", computer);
+    document.getElementById("result").innerHTML = result;
+});
+
+document.getElementById("paper").addEventListener("click", function() {
+    let computer = getComputerChoice();
+    let result = playRound("paper", computer);
+    document.getElementById("result").innerHTML = result;
+});
+
+document.getElementById("scissors").addEventListener("click", function() {
+    let computer = getComputerChoice();
+    let result = playRound("scissors", computer);
+    document.getElementById("result").innerHTML = result;
+});
