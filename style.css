@@ -1,6 +1,3 @@
-* {
-    border:solid red 1px;
-}
 
 html, body {
     display:flex;
@@ -56,9 +53,14 @@ button {
 img {
     height:400px;
     width:400px;
+    pointer-events:none;
 }
 
 #rock {
     clip: rect(100px 50px 50px 50px);
+}
+
+.reset {
+    background-color: white;
 }
 
