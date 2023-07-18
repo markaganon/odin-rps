@@ -38,3 +38,17 @@ button {
 #result {
     font-size: 25px;
 }
+
+#player-score {
+    font-size:20px;
+}
+
+#computer-score {
+    font-size:20px;
+}
+
+.scores {
+    display:flex;
+    gap:100px;
+}
+
