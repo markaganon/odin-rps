@@ -92,22 +92,30 @@ document.getElementById("rock").addEventListener("click", function() {
     let computer = getComputerChoice();
     let result = playRound("rock", computer);
     document.getElementById("result").innerHTML = result;
-    document.getElementById("player-score").innerHTML = "Player score: " + playerWinCount;
-    document.getElementById("computer-score").innerHTML = "Computer score: " + computerWinCount;
+    document.getElementById("player-score").innerHTML = "Player Score: " + playerWinCount;
+    document.getElementById("computer-score").innerHTML = "Computer Score: " + computerWinCount;
 });
 
 document.getElementById("paper").addEventListener("click", function() {
     let computer = getComputerChoice();
     let result = playRound("paper", computer);
     document.getElementById("result").innerHTML = result;
-    document.getElementById("player-score").innerHTML = "Player score: " + playerWinCount;
-    document.getElementById("computer-score").innerHTML = "Computer score: " + computerWinCount;
+    document.getElementById("player-score").innerHTML = "Player Score: " + playerWinCount;
+    document.getElementById("computer-score").innerHTML = "Computer Score: " + computerWinCount;
 });
 
 document.getElementById("scissors").addEventListener("click", function() {
     let computer = getComputerChoice();
     let result = playRound("scissors", computer);
     document.getElementById("result").innerHTML = result;
-    document.getElementById("player-score").innerHTML = "Player score: " + playerWinCount;
-    document.getElementById("computer-score").innerHTML = "Computer score: " + computerWinCount;
+    document.getElementById("player-score").innerHTML = "Player Score: " + playerWinCount;
+    document.getElementById("computer-score").innerHTML = "Computer Score: " + computerWinCount;
+});
+
+document.getElementById("reset").addEventListener("click", function() {
+    computerWinCount = 0;
+    playerWinCount = 0;
+    document.getElementById("player-score").innerHTML = "Player Score: 0";
+    document.getElementById("computer-score").innerHTML = "Computer Score: 0";
+    document.getElementById("result").innerHTML = "Your move";
 });
