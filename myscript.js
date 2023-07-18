@@ -61,33 +61,6 @@ function playRound(playerSelection, computerSelection) {
 
 }
 
-/*function game() {
-    let playerWinCount = 0;
-    let computerWinCount = 0;
-
-    while (true) {
-        if (playerWinCount == 3) {
-            return "Player is victorious!";
-        }
-        if (computerWinCount == 3) {
-            return "Computer is victorious!";
-        }
-        playerSelection = prompt("Rock, paper, or scissors?");
-        playerSelection = playerSelection.toLowerCase();
-        let winner = playRound(playerSelection, getComputerChoice());
-        console.log(winner);
-        if (winner.charAt(0) == 'C') {
-            computerWinCount++;
-        }
-        if (winner.charAt(0) == 'P') {
-            playerWinCount++;
-        }
-        if (winner.charAt(0) == 'T') {
-            continue;
-        }
-    }
-} */
-
 document.getElementById("rock").addEventListener("click", function() {
     let computer = getComputerChoice();
     let result = playRound("rock", computer);
